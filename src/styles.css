@@ -1,24 +1,46 @@
 :root {
   --light: #bec1c4;
   --number-buttons: #2a4673;
-  --operator-buttons: #a600ff;
+  --operator-buttons: #9357b3;
   --dark: #201426;
 }
-.App {
-  font-family: sans-serif;
+* {
+  margin: 0;
+  padding: 0;
   text-align: center;
+  font-family: sans-serif;
 }
+.App {
+  appearance: none;
+  max-width: 600px;
+  background-color: var(--dark);
+  border-radius: 16px;
+  height: 70vh;
+  margin-top: 10%;
+  margin-left: 10%;
+}
+
 .button-pad {
   padding: 5%;
-  width: 20%;
   background-color: var(--number-buttons);
   color: #eee;
-  border-radius: 25px;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: #201426;
+  flex: 1 1 33.3%;
+  box-shadow: #201426;
+  border: 1fr;
 }
 .button-pad-operator {
   width: 20%;
   padding: 5%;
   background-color: var(--operator-buttons);
-  border-radius: 25px;
+  border-radius: 40px;
   color: #eee;
+  cursor: pointer;
+}
+.numpad {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
 }

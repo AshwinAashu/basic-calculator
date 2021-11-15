@@ -1,6 +1,6 @@
 const Operators = () => {
   return (
-    <div classsName="operators-tab">
+    <div className="operators-tab">
       <button className="button-pad-operator" onChange>
         +
       </button>
