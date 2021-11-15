@@ -44,3 +44,16 @@
   flex-wrap: wrap;
   overflow: hidden;
 }
+.bottom-pad {
+}
+.button-bottom {
+  padding: 5%;
+  background-color: var(--number-buttons);
+  color: #eee;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: #201426;
+  width: 33.3%;
+  box-shadow: #201426;
+  border: 1fr;
+}
