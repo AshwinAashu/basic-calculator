@@ -1,0 +1,24 @@
+:root {
+  --light: #bec1c4;
+  --number-buttons: #2a4673;
+  --operator-buttons: #a600ff;
+  --dark: #201426;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.button-pad {
+  padding: 5%;
+  width: 20%;
+  background-color: var(--number-buttons);
+  color: #eee;
+  border-radius: 25px;
+}
+.button-pad-operator {
+  width: 20%;
+  padding: 5%;
+  background-color: var(--operator-buttons);
+  border-radius: 25px;
+  color: #eee;
+}
