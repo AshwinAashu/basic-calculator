@@ -4,6 +4,7 @@ const Display = ({ char, displayRes }) => {
   const evalChar = () => {
     return eval(char);
   };
+
   return (
     <div className="calculator-display">{displayRes ? evalChar() : char}</div>
   );

@@ -1,5 +1,5 @@
 import "./styles.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Operators from "./components/Operators";
 import NumberButtons from "./components/NumberButtons";
 import BottomPad from "./components/BottomPad";
@@ -8,9 +8,14 @@ export default function App() {
   const [expression, setExpression] = useState("");
   const [displayRes, setDisplayRes] = useState(false);
   const numpadHandler = (buttonValue) => {
+    if (displayRes) {
+      setDisplayRes(false);
+    }
     setExpression(expression.concat(buttonValue));
   };
-
+  useEffect(() => {
+    setExpression("");
+  }, []);
   return (
     <div className="App">
       <Display char={expression} displayRes={displayRes} />
