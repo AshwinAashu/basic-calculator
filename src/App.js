@@ -10,7 +10,7 @@ export default function App() {
   const numpadHandler = (buttonValue) => {
     setExpression(expression.concat(buttonValue));
   };
-  console.log(displayRes);
+
   return (
     <div className="App">
       <Display char={expression} displayRes={displayRes} />
