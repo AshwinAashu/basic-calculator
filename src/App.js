@@ -5,15 +5,14 @@ import NumberButtons from "./components/NumberButtons";
 import BottomPad from "./components/BottomPad";
 import Display from "./components/services/Display";
 export default function App() {
-  const [buttonVal, setButtonVal] = useState("");
-
+  const [expression, setExpression] = useState("");
   const numpadHandler = (buttonValue) => {
-    setButtonVal(buttonValue);
+    setExpression(expression.concat(buttonValue));
   };
-
+  console.log(expression);
   return (
     <div className="App">
-      <Display char={buttonVal} />
+      <Display char={expression} />
       <Operators />
       <NumberButtons numpadHandler={numpadHandler} />
       <BottomPad />

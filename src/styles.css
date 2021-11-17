@@ -15,7 +15,6 @@
   max-width: 600px;
   background-color: var(--dark);
   border-radius: 16px;
-  height: 70vh;
   margin-top: 10%;
   margin-left: 10%;
 }
@@ -57,7 +56,7 @@
 }
 .calculator-display {
   width: 100%;
-  height: 20%;
+  height: 20vh;
   border: 1px solid #eee;
   border-radius: 15px;
   color: #eee;
