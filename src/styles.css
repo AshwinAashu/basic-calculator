@@ -44,8 +44,6 @@
   flex-wrap: wrap;
   overflow: hidden;
 }
-.bottom-pad {
-}
 .button-bottom {
   padding: 5%;
   background-color: var(--number-buttons);
@@ -56,4 +54,11 @@
   width: 33.3%;
   box-shadow: #201426;
   border: 1fr;
+}
+.calculator-display {
+  width: 100%;
+  height: 20%;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  color: #eee;
 }
