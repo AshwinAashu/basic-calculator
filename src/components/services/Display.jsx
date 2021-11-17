@@ -1,7 +1,11 @@
-const Display = ({ char }) => {
+const Display = ({ char, displayRes }) => {
   //needs to check if we are adding two operators
   //consequently
-
-  return <div className="calculator-display">{char}</div>;
+  const evalChar = () => {
+    return eval(char);
+  };
+  return (
+    <div className="calculator-display">{displayRes ? evalChar() : char}</div>
+  );
 };
 export default Display;

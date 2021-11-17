@@ -6,16 +6,17 @@ import BottomPad from "./components/BottomPad";
 import Display from "./components/services/Display";
 export default function App() {
   const [expression, setExpression] = useState("");
+  const [displayRes, setDisplayRes] = useState(false);
   const numpadHandler = (buttonValue) => {
     setExpression(expression.concat(buttonValue));
   };
-  console.log(expression);
+  console.log(displayRes);
   return (
     <div className="App">
-      <Display char={expression} />
-      <Operators />
+      <Display char={expression} displayRes={displayRes} />
+      <Operators numpadHandler={numpadHandler} />
       <NumberButtons numpadHandler={numpadHandler} />
-      <BottomPad />
+      <BottomPad numpadHandler={numpadHandler} setDisplayRes={setDisplayRes} />
     </div>
   );
 }
