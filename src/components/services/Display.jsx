@@ -1,12 +1,16 @@
-const Display = ({ char, displayRes }) => {
-  //needs to check if we are adding two operators
-  //consequently
+const Display = ({ char, resHandler, displayRes }) => {
   const evalChar = () => {
-    return eval(char);
+    let ans = eval(char);
+    resHandler(ans);
+    return ans;
   };
 
   return (
-    <div className="calculator-display">{displayRes ? evalChar() : char}</div>
+    <div className="calculator-display">
+      <div className="calculator-display-char">
+        {displayRes ? evalChar() : char}
+      </div>
+    </div>
   );
 };
 export default Display;
