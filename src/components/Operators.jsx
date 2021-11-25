@@ -1,4 +1,4 @@
-const Operators = ({ numpadHandler }) => {
+const Operators = ({ numpadHandler, delHandler }) => {
   return (
     <div className="operators-tab">
       <button
@@ -40,7 +40,9 @@ const Operators = ({ numpadHandler }) => {
       >
         /
       </button>
-      <button className="button-pad-operator">Del</button>
+      <button className="button-pad-operator" onClick={delHandler}>
+        Del
+      </button>
     </div>
   );
 };

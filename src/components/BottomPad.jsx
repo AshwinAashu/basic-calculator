@@ -1,4 +1,4 @@
-const BottomPad = ({ numpadHandler, setDisplayRes }) => {
+const BottomPad = ({ numpadHandler, resHandler }) => {
   return (
     <div className="bttoom-pad">
       <button
@@ -19,7 +19,7 @@ const BottomPad = ({ numpadHandler, setDisplayRes }) => {
       >
         0
       </button>
-      <button className="button-bottom" onClick={() => setDisplayRes(true)}>
+      <button className="button-bottom" onClick={resHandler}>
         =
       </button>
     </div>

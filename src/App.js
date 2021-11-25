@@ -9,14 +9,34 @@ export default function App() {
   const [displayRes, setDisplayRes] = useState(false);
 
   const numpadHandler = (buttonValue) => {
-    setExpression(expression.concat(buttonValue));
+    const ops = ["*", "/", "+", "-"];
+    //when a key is pressed after '=' and it is not operator
+    if (displayRes && !ops.includes(buttonValue)) {
+      setDisplayRes(false);
+      setExpression(buttonValue.toString());
+    }
+    //when a key is pressed after = and it is a operator
+    else if (displayRes && ops.includes(buttonValue)) {
+      setDisplayRes(false);
+      setExpression(expression.concat(buttonValue));
+    }
+    //when any other key is pressed
+    else {
+      setExpression(expression.concat(buttonValue));
+    }
   };
 
-  const resHandler = (resValue) => {
-    if (displayRes) {
-      setDisplayRes(false);
-    }
-    setExpression(resValue.toString());
+  //delete a digit
+  const delHandler = () => {
+    const newDigit = expression.slice(0, -1);
+    setExpression(newDigit);
+  };
+
+  //set the result as the new expression
+  const resHandler = () => {
+    setDisplayRes(true);
+    const ansv = eval(expression);
+    setExpression(ansv.toString());
   };
   return (
     <div className="App">
@@ -25,9 +45,9 @@ export default function App() {
         resHandler={resHandler}
         displayRes={displayRes}
       />
-      <Operators numpadHandler={numpadHandler} />
+      <Operators numpadHandler={numpadHandler} delHandler={delHandler} />
       <NumberButtons numpadHandler={numpadHandler} />
-      <BottomPad numpadHandler={numpadHandler} setDisplayRes={setDisplayRes} />
+      <BottomPad numpadHandler={numpadHandler} resHandler={resHandler} />
     </div>
   );
 }
